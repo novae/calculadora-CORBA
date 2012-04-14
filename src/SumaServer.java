@@ -17,13 +17,13 @@ class SumaImpl extends sumaPOA{
         return primerNumero+segundoNumero;
     }
      public int restar(int primerNumero,int segundoNumero){
-        return primerNumero+segundoNumero;
+        return primerNumero-segundoNumero;
     }
       public int multiplicar(int primerNumero,int segundoNumero){
-        return primerNumero+segundoNumero;
+        return primerNumero*segundoNumero;
     }
        public int dividir(int primerNumero,int segundoNumero){
-        return primerNumero+segundoNumero;
+        return primerNumero/segundoNumero;
     }
     
     public void shutdown(){
