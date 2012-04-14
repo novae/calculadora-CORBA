@@ -1,6 +1,9 @@
 module sumaApp{
     interface suma{
         long sumar(in long primernumero, in long segundonumero);
+        long restar(in long primernumero, in long segundonumero);
+        long multiplicar(in long primernumero, in long segundonumero);
+        long dividir(in long primernumero, in long segundonumero);
         oneway void shutdown();    
     };
 };
