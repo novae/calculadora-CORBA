@@ -17,6 +17,9 @@ public class SumaClient{
                 
                 sumaImpl=sumaHelper.narrow(ncRef.resolve_str(name));
                 System.out.println("suma es:"+Integer.toString(sumaImpl.sumar(20, 30)));
+                System.out.println("resta es:"+Integer.toString(sumaImpl.restar(20, 30)));
+                System.out.println("multiplicacion es:"+Integer.toString(sumaImpl.multiplicar(20, 30)));
+                System.out.println("division es:"+Integer.toString(sumaImpl.dividir(20, 30)));
                 sumaImpl.shutdown();
                 
             
