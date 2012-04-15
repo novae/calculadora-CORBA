@@ -1,12 +1,15 @@
 
 import javax.swing.ImageIcon;
+import javax.swing.JTextField;
 
 
 public class GUICalculadora extends javax.swing.JFrame {
     ImageIcon[] imgBtns;
+    String cadenaResultado="";
+    int lenghtStrResult;
     
     public GUICalculadora() {
-        imgBtns=new ImageIcon[45];
+        imgBtns=new ImageIcon[48];
         for(int i=0;i<=imgBtns.length-1;i++){
             imgBtns[i]=new ImageIcon(getClass().getResource("imagenes/btns/"+i+".png"));
         }
@@ -39,6 +42,7 @@ public class GUICalculadora extends javax.swing.JFrame {
         btnMultiplicacion = new javax.swing.JButton();
         btnAceptar = new javax.swing.JButton();
         btnzero = new javax.swing.JButton();
+        btnC = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -271,6 +275,11 @@ public class GUICalculadora extends javax.swing.JFrame {
                 btnDivisionMouseExited(evt);
             }
         });
+        btnDivision.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDivisionActionPerformed(evt);
+            }
+        });
         btnDivision.setBounds(250, 150, 40, 37);
         jLayeredPane1.add(btnDivision, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -329,6 +338,29 @@ public class GUICalculadora extends javax.swing.JFrame {
         btnzero.setBounds(28, 102, 40, 37);
         jLayeredPane1.add(btnzero, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
+        btnC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btns/47.png"))); // NOI18N
+        btnC.setBorder(null);
+        btnC.setBorderPainted(false);
+        btnC.setContentAreaFilled(false);
+        btnC.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnCMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCMouseExited(evt);
+            }
+        });
+        btnC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCActionPerformed(evt);
+            }
+        });
+        btnC.setBounds(250, 102, 40, 37);
+        jLayeredPane1.add(btnC, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/tablero.jpg"))); // NOI18N
         jLabel1.setBounds(0, 0, 300, 300);
         jLayeredPane1.add(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -359,10 +391,14 @@ public class GUICalculadora extends javax.swing.JFrame {
 
     private void btnzeroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnzeroMouseClicked
         btnzero.setIcon(imgBtns[30]);
+        cadenaResultado=cadenaResultado+0;
+        setTxfResult(cadenaResultado);
     }//GEN-LAST:event_btnzeroMouseClicked
 
     private void btnUnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUnoMouseClicked
        btnUno.setIcon(imgBtns[31]);
+       cadenaResultado=cadenaResultado+1;
+       setTxfResult(cadenaResultado);
     }//GEN-LAST:event_btnUnoMouseClicked
 
     private void btnUnoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUnoMouseEntered
@@ -375,6 +411,8 @@ public class GUICalculadora extends javax.swing.JFrame {
 
     private void btnDosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDosMouseClicked
         btnDos.setIcon(imgBtns[32]);
+        cadenaResultado=cadenaResultado+2;
+        setTxfResult(cadenaResultado);
     }//GEN-LAST:event_btnDosMouseClicked
 
     private void btnDosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDosMouseEntered
@@ -387,6 +425,8 @@ public class GUICalculadora extends javax.swing.JFrame {
 
     private void btnTresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTresMouseClicked
         btnTres.setIcon(imgBtns[33]);
+        cadenaResultado=cadenaResultado+3;
+        setTxfResult(cadenaResultado);
     }//GEN-LAST:event_btnTresMouseClicked
 
     private void btnTresMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTresMouseEntered
@@ -399,6 +439,8 @@ public class GUICalculadora extends javax.swing.JFrame {
 
     private void btnCuatroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCuatroMouseClicked
         btnCuatro.setIcon(imgBtns[34]);
+        cadenaResultado=cadenaResultado+4;
+        setTxfResult(cadenaResultado);
     }//GEN-LAST:event_btnCuatroMouseClicked
 
     private void btnCuatroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCuatroMouseEntered
@@ -411,6 +453,8 @@ public class GUICalculadora extends javax.swing.JFrame {
 
     private void btnCincoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCincoMouseClicked
         btnCinco.setIcon(imgBtns[35]);
+        cadenaResultado=cadenaResultado+5;
+        setTxfResult(cadenaResultado);
     }//GEN-LAST:event_btnCincoMouseClicked
 
     private void btnCincoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCincoMouseEntered
@@ -423,6 +467,8 @@ public class GUICalculadora extends javax.swing.JFrame {
 
     private void btnSeisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSeisMouseClicked
         btnSeis.setIcon(imgBtns[36]);
+        cadenaResultado=cadenaResultado+6;
+        setTxfResult(cadenaResultado);
     }//GEN-LAST:event_btnSeisMouseClicked
 
     private void btnSeisMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSeisMouseEntered
@@ -435,6 +481,8 @@ public class GUICalculadora extends javax.swing.JFrame {
 
     private void btnSieteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSieteMouseClicked
         btnSiete.setIcon(imgBtns[37]);
+        cadenaResultado=cadenaResultado+7;
+        setTxfResult(cadenaResultado);
     }//GEN-LAST:event_btnSieteMouseClicked
 
     private void btnSieteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSieteMouseEntered
@@ -447,6 +495,8 @@ public class GUICalculadora extends javax.swing.JFrame {
 
     private void btnOchoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOchoMouseClicked
         btnOcho.setIcon(imgBtns[38]);
+        cadenaResultado=cadenaResultado+8;
+        setTxfResult(cadenaResultado);
     }//GEN-LAST:event_btnOchoMouseClicked
 
     private void btnOchoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOchoMouseEntered
@@ -459,6 +509,8 @@ public class GUICalculadora extends javax.swing.JFrame {
 
     private void btnNueveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNueveMouseClicked
         btnNueve.setIcon(imgBtns[39]);
+        cadenaResultado=cadenaResultado+9;
+        setTxfResult(cadenaResultado);
     }//GEN-LAST:event_btnNueveMouseClicked
 
     private void btnNueveMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNueveMouseEntered
@@ -471,6 +523,8 @@ public class GUICalculadora extends javax.swing.JFrame {
 
     private void btnSumaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSumaMouseClicked
         btnSuma.setIcon(imgBtns[40]);
+        cadenaResultado=cadenaResultado+"+";
+        setTxfResult(cadenaResultado);
     }//GEN-LAST:event_btnSumaMouseClicked
 
     private void btnSumaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSumaMouseEntered
@@ -483,6 +537,8 @@ public class GUICalculadora extends javax.swing.JFrame {
 
     private void btnRestaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRestaMouseClicked
         btnResta.setIcon(imgBtns[41]);
+        cadenaResultado=cadenaResultado+"-";
+        setTxfResult(cadenaResultado);
     }//GEN-LAST:event_btnRestaMouseClicked
 
     private void btnRestaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRestaMouseEntered
@@ -495,6 +551,8 @@ public class GUICalculadora extends javax.swing.JFrame {
 
     private void btnDivisionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDivisionMouseClicked
         btnDivision.setIcon(imgBtns[43]);
+        cadenaResultado=cadenaResultado+"/";
+        setTxfResult(cadenaResultado);
     }//GEN-LAST:event_btnDivisionMouseClicked
 
     private void btnDivisionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDivisionMouseEntered
@@ -507,6 +565,8 @@ public class GUICalculadora extends javax.swing.JFrame {
 
     private void btnMultiplicacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMultiplicacionMouseClicked
         btnMultiplicacion.setIcon(imgBtns[42]);
+        cadenaResultado=cadenaResultado+"*";
+        setTxfResult(cadenaResultado);
     }//GEN-LAST:event_btnMultiplicacionMouseClicked
 
     private void btnMultiplicacionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMultiplicacionMouseEntered
@@ -537,6 +597,46 @@ public class GUICalculadora extends javax.swing.JFrame {
         btnAceptar.setIcon(imgBtns[14]);
     }//GEN-LAST:event_btnAceptarMouseExited
 
+    private void btnCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCMouseClicked
+        btnC.setIcon(imgBtns[45]);
+    }//GEN-LAST:event_btnCMouseClicked
+
+    private void btnCMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCMouseEntered
+        btnC.setIcon(imgBtns[46]);
+    }//GEN-LAST:event_btnCMouseEntered
+
+    private void btnCMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCMouseExited
+        btnC.setIcon(imgBtns[47]);
+    }
+
+    public void setTxfResult(String cadenaResultado) {
+        txfResult.setText(cadenaResultado);
+        
+    }//GEN-LAST:event_btnCMouseExited
+
+    private void btnCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCActionPerformed
+       String newCadena="";
+       
+       if(getTxfResult()==""){
+           System.out.println("nada");
+       }
+       else{
+       newCadena=cadenaResultado.substring(0,cadenaResultado.length()-1);
+        cadenaResultado=newCadena;
+        setTxfResult(cadenaResultado);
+       }
+    }//GEN-LAST:event_btnCActionPerformed
+
+    private void btnDivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivisionActionPerformed
+    
+    }//GEN-LAST:event_btnDivisionActionPerformed
+
+    public String getTxfResult(){
+    return cadenaResultado;
+    }    
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -580,6 +680,7 @@ public class GUICalculadora extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptar;
+    private javax.swing.JButton btnC;
     private javax.swing.JButton btnCinco;
     private javax.swing.JButton btnCuatro;
     private javax.swing.JButton btnDivision;
