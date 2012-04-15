@@ -3,12 +3,20 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+import sumaApp.*;
+import org.omg.CosNaming.*;
+import org.omg.CosNaming.NamingContextPackage.*;
+import org.omg.CORBA.*;
+
 
 public class GUICalculadora extends javax.swing.JFrame {
     ImageIcon[] imgBtns;
     String cadenaResultado="";
     boolean bandera=false;
+    int operacion=0;
     int lenghtStrResult,primerNumero=0,segundoNumero=0,indexsegundoNumero=0;
+    
+    static suma sumaImpl;
     
     public GUICalculadora() {
         imgBtns=new ImageIcon[48];
@@ -48,6 +56,11 @@ public class GUICalculadora extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         txfResult.setBackground(new java.awt.Color(51, 51, 51));
         txfResult.setForeground(new java.awt.Color(0, 204, 204));
@@ -534,6 +547,7 @@ public class GUICalculadora extends javax.swing.JFrame {
         setTxfResult(cadenaResultado);
         setPrimerNumero(cadenaResultado);
         bandera=false;
+        operacion=1;
     }//GEN-LAST:event_btnSumaMouseClicked
 
     private void btnSumaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSumaMouseEntered
@@ -550,6 +564,7 @@ public class GUICalculadora extends javax.swing.JFrame {
         setTxfResult(cadenaResultado);
         setPrimerNumero(cadenaResultado);
         bandera=false;
+        operacion=2;
     }//GEN-LAST:event_btnRestaMouseClicked
 
     private void btnRestaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRestaMouseEntered
@@ -565,7 +580,8 @@ public class GUICalculadora extends javax.swing.JFrame {
         cadenaResultado=cadenaResultado+"/";
         setTxfResult(cadenaResultado);
         setPrimerNumero(cadenaResultado);
-        bandera=true;    
+        bandera=true; 
+        operacion=4;
     }//GEN-LAST:event_btnDivisionMouseClicked
 
     private void btnDivisionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDivisionMouseEntered
@@ -582,6 +598,7 @@ public class GUICalculadora extends javax.swing.JFrame {
         setTxfResult(cadenaResultado);
         setPrimerNumero(cadenaResultado);
         bandera=false;
+        operacion=3;
     }//GEN-LAST:event_btnMultiplicacionMouseClicked
 
     private void btnMultiplicacionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMultiplicacionMouseEntered
@@ -657,8 +674,27 @@ public class GUICalculadora extends javax.swing.JFrame {
             System.out.println("numero uno: "+getPrimerNumero());
             System.out.println("numero Dos: "+getSegundoNumero());
         }
+        switch(operacion){
+            case 1:
+               // sumaImpl.sumar(getPrimerNumero(),getSegundoNumero());
+               txfResult.setText(sumaImpl.sumar(getPrimerNumero(),getSegundoNumero())+"");
+                break;
+            case 2:
+                txfResult.setText(sumaImpl.restar(getPrimerNumero(),getSegundoNumero())+"");
+                break;    
+            case 3:
+                txfResult.setText(sumaImpl.multiplicar(getPrimerNumero(),getSegundoNumero())+"");
+                break;
+            case 4:
+                txfResult.setText(sumaImpl.dividir(getPrimerNumero(),getSegundoNumero())+"");
+                break;    
+        }
         
     }//GEN-LAST:event_btnAceptarActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+    sumaImpl.shutdown();
+    }//GEN-LAST:event_formWindowClosing
 
     public String getTxfResult(){
     return cadenaResultado;
@@ -687,36 +723,26 @@ public class GUICalculadora extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /*
-         * Set the Nimbus look and feel
-         */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /*
-         * If Nimbus (introduced in Java SE 6) is not available, stay with the
-         * default look and feel. For details see
-         * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
+        try{
+                ORB orb= ORB.init(args,null);
+                org.omg.CORBA.Object objRef=orb.resolve_initial_references("NameService");
+                NamingContextExt ncRef= NamingContextExtHelper.narrow(objRef);
+                String name="Suma";
+                
+                sumaImpl=sumaHelper.narrow(ncRef.resolve_str(name));
+               /* System.out.println("suma es:"+Integer.toString(sumaImpl.sumar(20, 30)));
+                System.out.println("resta es:"+Integer.toString(sumaImpl.restar(20, 30)));
+                System.out.println("multiplicacion es:"+Integer.toString(sumaImpl.multiplicar(20, 30)));
+                System.out.println("division es:"+Integer.toString(sumaImpl.dividir(20, 30)));*/
+//                sumaImpl.shutdown();
+                
+            
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GUICalculadora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GUICalculadora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GUICalculadora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GUICalculadora.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /*
-         * Create and display the form
-         */
+            catch(Exception e){
+                System.err.println("ERROR: "+e);
+                e.printStackTrace(System.out);
+            }
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
