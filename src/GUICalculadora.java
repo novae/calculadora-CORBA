@@ -1,18 +1,15 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author TEC
- */
+import javax.swing.ImageIcon;
+
+
 public class GUICalculadora extends javax.swing.JFrame {
-
-    /**
-     * Creates new form GUICalculadora
-     */
+    ImageIcon[] imgBtns;
+    
     public GUICalculadora() {
+        imgBtns=new ImageIcon[45];
+        for(int i=0;i<=imgBtns.length-1;i++){
+            imgBtns[i]=new ImageIcon(getClass().getResource("imagenes/btns/"+i+".png"));
+        }
         initComponents();
     }
 
@@ -25,21 +22,520 @@ public class GUICalculadora extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLayeredPane1 = new javax.swing.JLayeredPane();
+        txfResult = new javax.swing.JTextField();
+        btnUno = new javax.swing.JButton();
+        btnDos = new javax.swing.JButton();
+        btnTres = new javax.swing.JButton();
+        btnCuatro = new javax.swing.JButton();
+        btnCinco = new javax.swing.JButton();
+        btnSeis = new javax.swing.JButton();
+        btnSiete = new javax.swing.JButton();
+        btnOcho = new javax.swing.JButton();
+        btnNueve = new javax.swing.JButton();
+        btnSuma = new javax.swing.JButton();
+        btnResta = new javax.swing.JButton();
+        btnDivision = new javax.swing.JButton();
+        btnMultiplicacion = new javax.swing.JButton();
+        btnAceptar = new javax.swing.JButton();
+        btnzero = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        txfResult.setBackground(new java.awt.Color(51, 51, 51));
+        txfResult.setForeground(new java.awt.Color(0, 204, 204));
+        txfResult.setBounds(20, 20, 250, 60);
+        jLayeredPane1.add(txfResult, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        btnUno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btns/1.png"))); // NOI18N
+        btnUno.setBorder(null);
+        btnUno.setBorderPainted(false);
+        btnUno.setContentAreaFilled(false);
+        btnUno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnUnoMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnUnoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnUnoMouseExited(evt);
+            }
+        });
+        btnUno.setBounds(75, 102, 40, 37);
+        jLayeredPane1.add(btnUno, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        btnDos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btns/2.png"))); // NOI18N
+        btnDos.setBorder(null);
+        btnDos.setBorderPainted(false);
+        btnDos.setContentAreaFilled(false);
+        btnDos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnDosMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnDosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnDosMouseExited(evt);
+            }
+        });
+        btnDos.setBounds(127, 102, 40, 37);
+        jLayeredPane1.add(btnDos, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        btnTres.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btns/3.png"))); // NOI18N
+        btnTres.setBorder(null);
+        btnTres.setBorderPainted(false);
+        btnTres.setContentAreaFilled(false);
+        btnTres.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnTresMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnTresMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnTresMouseExited(evt);
+            }
+        });
+        btnTres.setBounds(28, 150, 40, 37);
+        jLayeredPane1.add(btnTres, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        btnCuatro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btns/4.png"))); // NOI18N
+        btnCuatro.setBorder(null);
+        btnCuatro.setBorderPainted(false);
+        btnCuatro.setContentAreaFilled(false);
+        btnCuatro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCuatroMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnCuatroMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCuatroMouseExited(evt);
+            }
+        });
+        btnCuatro.setBounds(75, 150, 40, 37);
+        jLayeredPane1.add(btnCuatro, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        btnCinco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btns/5.png"))); // NOI18N
+        btnCinco.setBorder(null);
+        btnCinco.setBorderPainted(false);
+        btnCinco.setContentAreaFilled(false);
+        btnCinco.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCincoMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnCincoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCincoMouseExited(evt);
+            }
+        });
+        btnCinco.setBounds(127, 150, 40, 37);
+        jLayeredPane1.add(btnCinco, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        btnSeis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btns/6.png"))); // NOI18N
+        btnSeis.setBorder(null);
+        btnSeis.setBorderPainted(false);
+        btnSeis.setContentAreaFilled(false);
+        btnSeis.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSeisMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnSeisMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnSeisMouseExited(evt);
+            }
+        });
+        btnSeis.setBounds(28, 198, 40, 37);
+        jLayeredPane1.add(btnSeis, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        btnSiete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btns/7.png"))); // NOI18N
+        btnSiete.setBorder(null);
+        btnSiete.setBorderPainted(false);
+        btnSiete.setContentAreaFilled(false);
+        btnSiete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSieteMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnSieteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnSieteMouseExited(evt);
+            }
+        });
+        btnSiete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSieteActionPerformed(evt);
+            }
+        });
+        btnSiete.setBounds(75, 198, 40, 37);
+        jLayeredPane1.add(btnSiete, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        btnOcho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btns/8.png"))); // NOI18N
+        btnOcho.setBorder(null);
+        btnOcho.setBorderPainted(false);
+        btnOcho.setContentAreaFilled(false);
+        btnOcho.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOchoMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnOchoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnOchoMouseExited(evt);
+            }
+        });
+        btnOcho.setBounds(127, 198, 40, 37);
+        jLayeredPane1.add(btnOcho, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        btnNueve.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btns/9.png"))); // NOI18N
+        btnNueve.setBorder(null);
+        btnNueve.setBorderPainted(false);
+        btnNueve.setContentAreaFilled(false);
+        btnNueve.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnNueveMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnNueveMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnNueveMouseExited(evt);
+            }
+        });
+        btnNueve.setBounds(75, 240, 40, 37);
+        jLayeredPane1.add(btnNueve, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        btnSuma.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btns/10.png"))); // NOI18N
+        btnSuma.setBorder(null);
+        btnSuma.setBorderPainted(false);
+        btnSuma.setContentAreaFilled(false);
+        btnSuma.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSumaMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnSumaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnSumaMouseExited(evt);
+            }
+        });
+        btnSuma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSumaActionPerformed(evt);
+            }
+        });
+        btnSuma.setBounds(189, 102, 40, 37);
+        jLayeredPane1.add(btnSuma, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        btnResta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btns/11.png"))); // NOI18N
+        btnResta.setBorder(null);
+        btnResta.setBorderPainted(false);
+        btnResta.setContentAreaFilled(false);
+        btnResta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnRestaMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnRestaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnRestaMouseExited(evt);
+            }
+        });
+        btnResta.setBounds(189, 150, 40, 37);
+        jLayeredPane1.add(btnResta, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        btnDivision.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btns/13.png"))); // NOI18N
+        btnDivision.setBorder(null);
+        btnDivision.setBorderPainted(false);
+        btnDivision.setContentAreaFilled(false);
+        btnDivision.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnDivisionMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnDivisionMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnDivisionMouseExited(evt);
+            }
+        });
+        btnDivision.setBounds(250, 150, 40, 37);
+        jLayeredPane1.add(btnDivision, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        btnMultiplicacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btns/12.png"))); // NOI18N
+        btnMultiplicacion.setBorder(null);
+        btnMultiplicacion.setBorderPainted(false);
+        btnMultiplicacion.setContentAreaFilled(false);
+        btnMultiplicacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMultiplicacionMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnMultiplicacionMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnMultiplicacionMouseExited(evt);
+            }
+        });
+        btnMultiplicacion.setBounds(189, 198, 40, 37);
+        jLayeredPane1.add(btnMultiplicacion, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        btnAceptar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btns/14.png"))); // NOI18N
+        btnAceptar.setBorder(null);
+        btnAceptar.setBorderPainted(false);
+        btnAceptar.setContentAreaFilled(false);
+        btnAceptar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAceptarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnAceptarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAceptarMouseExited(evt);
+            }
+        });
+        btnAceptar.setBounds(189, 235, 77, 40);
+        jLayeredPane1.add(btnAceptar, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        btnzero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btns/0.png"))); // NOI18N
+        btnzero.setBorder(null);
+        btnzero.setBorderPainted(false);
+        btnzero.setContentAreaFilled(false);
+        btnzero.setOpaque(false);
+        btnzero.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnzeroMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnzeroMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnzeroMouseExited(evt);
+            }
+        });
+        btnzero.setBounds(28, 102, 40, 37);
+        jLayeredPane1.add(btnzero, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/tablero.jpg"))); // NOI18N
+        jLabel1.setBounds(0, 0, 300, 300);
+        jLayeredPane1.add(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 301, Short.MAX_VALUE)
+            .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnzeroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnzeroMouseEntered
+      btnzero.setIcon(imgBtns[15]);
+      
+    }//GEN-LAST:event_btnzeroMouseEntered
+
+    private void btnzeroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnzeroMouseExited
+       btnzero.setIcon(imgBtns[0]);
+       
+    }//GEN-LAST:event_btnzeroMouseExited
+
+    private void btnzeroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnzeroMouseClicked
+        btnzero.setIcon(imgBtns[30]);
+    }//GEN-LAST:event_btnzeroMouseClicked
+
+    private void btnUnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUnoMouseClicked
+       btnUno.setIcon(imgBtns[31]);
+    }//GEN-LAST:event_btnUnoMouseClicked
+
+    private void btnUnoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUnoMouseEntered
+        btnUno.setIcon(imgBtns[16]);
+    }//GEN-LAST:event_btnUnoMouseEntered
+
+    private void btnUnoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUnoMouseExited
+        btnUno.setIcon(imgBtns[1]);
+    }//GEN-LAST:event_btnUnoMouseExited
+
+    private void btnDosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDosMouseClicked
+        btnDos.setIcon(imgBtns[32]);
+    }//GEN-LAST:event_btnDosMouseClicked
+
+    private void btnDosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDosMouseEntered
+        btnDos.setIcon(imgBtns[17]);
+    }//GEN-LAST:event_btnDosMouseEntered
+
+    private void btnDosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDosMouseExited
+        btnDos.setIcon(imgBtns[2]);
+    }//GEN-LAST:event_btnDosMouseExited
+
+    private void btnTresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTresMouseClicked
+        btnTres.setIcon(imgBtns[33]);
+    }//GEN-LAST:event_btnTresMouseClicked
+
+    private void btnTresMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTresMouseEntered
+        btnTres.setIcon(imgBtns[18]);
+    }//GEN-LAST:event_btnTresMouseEntered
+
+    private void btnTresMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTresMouseExited
+        btnTres.setIcon(imgBtns[3]);
+    }//GEN-LAST:event_btnTresMouseExited
+
+    private void btnCuatroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCuatroMouseClicked
+        btnCuatro.setIcon(imgBtns[34]);
+    }//GEN-LAST:event_btnCuatroMouseClicked
+
+    private void btnCuatroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCuatroMouseEntered
+        btnCuatro.setIcon(imgBtns[19]);
+    }//GEN-LAST:event_btnCuatroMouseEntered
+
+    private void btnCuatroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCuatroMouseExited
+        btnCuatro.setIcon(imgBtns[4]);
+    }//GEN-LAST:event_btnCuatroMouseExited
+
+    private void btnCincoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCincoMouseClicked
+        btnCinco.setIcon(imgBtns[35]);
+    }//GEN-LAST:event_btnCincoMouseClicked
+
+    private void btnCincoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCincoMouseEntered
+       btnCinco.setIcon(imgBtns[20]);
+    }//GEN-LAST:event_btnCincoMouseEntered
+
+    private void btnCincoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCincoMouseExited
+        btnCinco.setIcon(imgBtns[5]);
+    }//GEN-LAST:event_btnCincoMouseExited
+
+    private void btnSeisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSeisMouseClicked
+        btnSeis.setIcon(imgBtns[36]);
+    }//GEN-LAST:event_btnSeisMouseClicked
+
+    private void btnSeisMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSeisMouseEntered
+        btnSeis.setIcon(imgBtns[21]);
+    }//GEN-LAST:event_btnSeisMouseEntered
+
+    private void btnSeisMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSeisMouseExited
+        btnSeis.setIcon(imgBtns[6]);
+    }//GEN-LAST:event_btnSeisMouseExited
+
+    private void btnSieteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSieteMouseClicked
+        btnSiete.setIcon(imgBtns[37]);
+    }//GEN-LAST:event_btnSieteMouseClicked
+
+    private void btnSieteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSieteMouseEntered
+        btnSiete.setIcon(imgBtns[22]);
+    }//GEN-LAST:event_btnSieteMouseEntered
+
+    private void btnSieteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSieteMouseExited
+       btnSiete.setIcon(imgBtns[7]);
+    }//GEN-LAST:event_btnSieteMouseExited
+
+    private void btnOchoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOchoMouseClicked
+        btnOcho.setIcon(imgBtns[38]);
+    }//GEN-LAST:event_btnOchoMouseClicked
+
+    private void btnOchoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOchoMouseEntered
+        btnOcho.setIcon(imgBtns[23]);
+    }//GEN-LAST:event_btnOchoMouseEntered
+
+    private void btnOchoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOchoMouseExited
+         btnOcho.setIcon(imgBtns[8]);
+    }//GEN-LAST:event_btnOchoMouseExited
+
+    private void btnNueveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNueveMouseClicked
+        btnNueve.setIcon(imgBtns[39]);
+    }//GEN-LAST:event_btnNueveMouseClicked
+
+    private void btnNueveMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNueveMouseEntered
+        btnNueve.setIcon(imgBtns[39]);
+    }//GEN-LAST:event_btnNueveMouseEntered
+
+    private void btnNueveMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNueveMouseExited
+        btnNueve.setIcon(imgBtns[9]);
+    }//GEN-LAST:event_btnNueveMouseExited
+
+    private void btnSumaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSumaMouseClicked
+        btnSuma.setIcon(imgBtns[40]);
+    }//GEN-LAST:event_btnSumaMouseClicked
+
+    private void btnSumaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSumaMouseEntered
+        btnSuma.setIcon(imgBtns[25]);
+    }//GEN-LAST:event_btnSumaMouseEntered
+
+    private void btnSumaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSumaMouseExited
+        btnSuma.setIcon(imgBtns[10]);
+    }//GEN-LAST:event_btnSumaMouseExited
+
+    private void btnRestaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRestaMouseClicked
+        btnResta.setIcon(imgBtns[41]);
+    }//GEN-LAST:event_btnRestaMouseClicked
+
+    private void btnRestaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRestaMouseEntered
+        btnResta.setIcon(imgBtns[26]);
+    }//GEN-LAST:event_btnRestaMouseEntered
+
+    private void btnRestaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRestaMouseExited
+        btnResta.setIcon(imgBtns[11]);
+    }//GEN-LAST:event_btnRestaMouseExited
+
+    private void btnDivisionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDivisionMouseClicked
+        btnDivision.setIcon(imgBtns[43]);
+    }//GEN-LAST:event_btnDivisionMouseClicked
+
+    private void btnDivisionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDivisionMouseEntered
+        btnDivision.setIcon(imgBtns[28]);
+    }//GEN-LAST:event_btnDivisionMouseEntered
+
+    private void btnDivisionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDivisionMouseExited
+        btnDivision.setIcon(imgBtns[13]);
+    }//GEN-LAST:event_btnDivisionMouseExited
+
+    private void btnMultiplicacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMultiplicacionMouseClicked
+        btnMultiplicacion.setIcon(imgBtns[42]);
+    }//GEN-LAST:event_btnMultiplicacionMouseClicked
+
+    private void btnMultiplicacionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMultiplicacionMouseEntered
+        btnMultiplicacion.setIcon(imgBtns[27]);
+    }//GEN-LAST:event_btnMultiplicacionMouseEntered
+
+    private void btnMultiplicacionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMultiplicacionMouseExited
+        btnMultiplicacion.setIcon(imgBtns[12]);
+    }//GEN-LAST:event_btnMultiplicacionMouseExited
+
+    private void btnSieteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSieteActionPerformed
+       
+    }//GEN-LAST:event_btnSieteActionPerformed
+
+    private void btnSumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSumaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSumaActionPerformed
+
+    private void btnAceptarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAceptarMouseClicked
+        btnAceptar.setIcon(imgBtns[44]);
+    }//GEN-LAST:event_btnAceptarMouseClicked
+
+    private void btnAceptarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAceptarMouseEntered
+        btnAceptar.setIcon(imgBtns[29]);
+    }//GEN-LAST:event_btnAceptarMouseEntered
+
+    private void btnAceptarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAceptarMouseExited
+        btnAceptar.setIcon(imgBtns[14]);
+    }//GEN-LAST:event_btnAceptarMouseExited
 
     /**
      * @param args the command line arguments
@@ -83,5 +579,23 @@ public class GUICalculadora extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAceptar;
+    private javax.swing.JButton btnCinco;
+    private javax.swing.JButton btnCuatro;
+    private javax.swing.JButton btnDivision;
+    private javax.swing.JButton btnDos;
+    private javax.swing.JButton btnMultiplicacion;
+    private javax.swing.JButton btnNueve;
+    private javax.swing.JButton btnOcho;
+    private javax.swing.JButton btnResta;
+    private javax.swing.JButton btnSeis;
+    private javax.swing.JButton btnSiete;
+    private javax.swing.JButton btnSuma;
+    private javax.swing.JButton btnTres;
+    private javax.swing.JButton btnUno;
+    private javax.swing.JButton btnzero;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JTextField txfResult;
     // End of variables declaration//GEN-END:variables
 }
