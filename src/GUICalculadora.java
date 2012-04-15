@@ -1,12 +1,14 @@
 
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 
 public class GUICalculadora extends javax.swing.JFrame {
     ImageIcon[] imgBtns;
     String cadenaResultado="";
-    int lenghtStrResult;
+    boolean bandera=false;
+    int lenghtStrResult,primerNumero=0,segundoNumero=0,indexsegundoNumero=0;
     
     public GUICalculadora() {
         imgBtns=new ImageIcon[48];
@@ -316,6 +318,11 @@ public class GUICalculadora extends javax.swing.JFrame {
                 btnAceptarMouseExited(evt);
             }
         });
+        btnAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAceptarActionPerformed(evt);
+            }
+        });
         btnAceptar.setBounds(189, 235, 77, 40);
         jLayeredPane1.add(btnAceptar, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -323,7 +330,6 @@ public class GUICalculadora extends javax.swing.JFrame {
         btnzero.setBorder(null);
         btnzero.setBorderPainted(false);
         btnzero.setContentAreaFilled(false);
-        btnzero.setOpaque(false);
         btnzero.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnzeroMouseClicked(evt);
@@ -393,6 +399,7 @@ public class GUICalculadora extends javax.swing.JFrame {
         btnzero.setIcon(imgBtns[30]);
         cadenaResultado=cadenaResultado+0;
         setTxfResult(cadenaResultado);
+        
     }//GEN-LAST:event_btnzeroMouseClicked
 
     private void btnUnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUnoMouseClicked
@@ -525,6 +532,8 @@ public class GUICalculadora extends javax.swing.JFrame {
         btnSuma.setIcon(imgBtns[40]);
         cadenaResultado=cadenaResultado+"+";
         setTxfResult(cadenaResultado);
+        setPrimerNumero(cadenaResultado);
+        bandera=false;
     }//GEN-LAST:event_btnSumaMouseClicked
 
     private void btnSumaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSumaMouseEntered
@@ -539,6 +548,8 @@ public class GUICalculadora extends javax.swing.JFrame {
         btnResta.setIcon(imgBtns[41]);
         cadenaResultado=cadenaResultado+"-";
         setTxfResult(cadenaResultado);
+        setPrimerNumero(cadenaResultado);
+        bandera=false;
     }//GEN-LAST:event_btnRestaMouseClicked
 
     private void btnRestaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRestaMouseEntered
@@ -553,6 +564,8 @@ public class GUICalculadora extends javax.swing.JFrame {
         btnDivision.setIcon(imgBtns[43]);
         cadenaResultado=cadenaResultado+"/";
         setTxfResult(cadenaResultado);
+        setPrimerNumero(cadenaResultado);
+        bandera=true;    
     }//GEN-LAST:event_btnDivisionMouseClicked
 
     private void btnDivisionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDivisionMouseEntered
@@ -567,6 +580,8 @@ public class GUICalculadora extends javax.swing.JFrame {
         btnMultiplicacion.setIcon(imgBtns[42]);
         cadenaResultado=cadenaResultado+"*";
         setTxfResult(cadenaResultado);
+        setPrimerNumero(cadenaResultado);
+        bandera=false;
     }//GEN-LAST:event_btnMultiplicacionMouseClicked
 
     private void btnMultiplicacionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMultiplicacionMouseEntered
@@ -628,13 +643,44 @@ public class GUICalculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCActionPerformed
 
     private void btnDivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivisionActionPerformed
-    
+        
+        //if(setPrimerNumero(cadenaResultado)==0){
+           // }
     }//GEN-LAST:event_btnDivisionActionPerformed
+
+    private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
+    setSegundoNumero(cadenaResultado);
+        if(bandera=true && getSegundoNumero()==0){
+                JOptionPane.showMessageDialog(null,"Error: Divicion por 0");
+        }
+        else{
+            System.out.println("numero uno: "+getPrimerNumero());
+            System.out.println("numero Dos: "+getSegundoNumero());
+        }
+        
+    }//GEN-LAST:event_btnAceptarActionPerformed
 
     public String getTxfResult(){
     return cadenaResultado;
     }    
     
+    public void setPrimerNumero(String cadenaResultado){
+        indexsegundoNumero=cadenaResultado.length();
+        primerNumero=Integer.parseInt(cadenaResultado.substring(0,cadenaResultado.length()-1));
+    }
+    
+    public void setSegundoNumero(String cadenaResultado){
+    segundoNumero=Integer.parseInt(cadenaResultado.substring(indexsegundoNumero,cadenaResultado.length()));
+    
+    }
+    
+    public int getPrimerNumero(){
+    return primerNumero;     
+    }
+    
+    public int getSegundoNumero(){
+    return segundoNumero;     
+    }
     
     
     /**
