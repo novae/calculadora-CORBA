@@ -57,6 +57,9 @@ public class GUICalculadora extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
             }
@@ -678,6 +681,7 @@ public class GUICalculadora extends javax.swing.JFrame {
             case 1:
                // sumaImpl.sumar(getPrimerNumero(),getSegundoNumero());
                txfResult.setText(sumaImpl.sumar(getPrimerNumero(),getSegundoNumero())+"");
+               
                 break;
             case 2:
                 txfResult.setText(sumaImpl.restar(getPrimerNumero(),getSegundoNumero())+"");
@@ -695,6 +699,11 @@ public class GUICalculadora extends javax.swing.JFrame {
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
     sumaImpl.shutdown();
     }//GEN-LAST:event_formWindowClosing
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+    
+    
+    }//GEN-LAST:event_formWindowOpened
 
     public String getTxfResult(){
     return cadenaResultado;

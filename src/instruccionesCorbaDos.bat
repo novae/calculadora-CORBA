@@ -10,7 +10,4 @@ cd C:\Users\TEC\Dropbox\IAD\entregarIAD\calculadoraCORBA\src
 java SumaServer -ORBInitialPort 1080 -ORBInitialHost localhost
 
 cd C:\Users\TEC\Dropbox\IAD\entregarIAD\calculadoraCORBA\src
-java SumaClient -ORBInitialPort 1080 -ORBInitialHost localhost
-
-cd C:\Users\TEC\Dropbox\IAD\entregarIAD\calculadoraCORBA\src
 java GUICalculadora -ORBInitialPort 1080 -ORBInitialHost localhost
